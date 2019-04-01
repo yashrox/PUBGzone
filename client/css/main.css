@@ -1,0 +1,169 @@
+.btn{
+ text-align: center
+     
+
+}
+.back{
+			background-image : url(http://hdqwalls.com/wallpapers/pubg-characters-4k-fp.jpg);
+			background-size : cover ;
+			background-position : center center ;
+			background-repeat: no-repeat ;
+			height : 60vh ;
+			width: 100%;				
+	}	
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 13em;
+  height: 15em;
+  perspective: 1000px;
+}
+
+.space{
+        margin-bottom: 1.5em;
+}
+
+.backh1{
+    text-align: center;
+        color:tomato;
+    font-weight: bold 
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/*------title------*/
+
+
+.title-text{
+	color: black;
+	text-align: center;
+	font-size: 30px;
+	font-style: bold;
+	text-transform: uppercase;
+}
+
+/*-------services----------*/
+#services{
+	
+	
+}
+
+.backimage{
+    background: url("../img/1.png");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+    height: 13.6em;
+    
+}
+.services-container{
+	max-width: 90vw;
+	margin: 0 auto;
+	color: #e0e2db;
+}
+.service-item{
+	
+    overflow: hidden;
+	position: relative;
+	padding: 4em;
+}
+.service-item .fa{
+	font-size: 50px;
+	margin-bottom: 30px;
+	color: white;
+}
+
+
+.front-text {
+	text-align: center;
+	transition: transform 2s;
+}
+.back-text{
+	position: absolute;
+	bottom: -15em;
+	width: 75%;
+	margin: 0 auto;
+	height: 100%;
+	transition: bottom 2s;
+	padding: 30px 0;
+}
+.back-text h1{
+	margin-bottom: 20px;
+}
+.back-text button{
+	margin-top: 20px;
+	padding: 10px 20px;
+	background: transparent;
+	border: 1px solid #e6af2e;
+	font-size: 15px;
+	color: #e6af2e;
+}
+.back-text button:hover{
+	background-color: #e6af2e;
+	color: #191716;
+}
+.service-item-white button{
+	background: #e6af2e;
+	color: #191716;
+}
+.service-item-white button:hover{
+	background: #191716;
+	border-color: #191716;
+	color: #e6af2e;
+}
+.service-item:hover .front-text{
+	transform: translateY(-200px);
+}
+.service-item:hover .back-text{
+	bottom: 0;
+}
+.service-item-black{
+	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+}
+.service-item-white{
+	color: #191716;
+	background: linear-gradient(rgba(206,208,206,0.6),(rgba(206,208,206,0.6));
+}
+
+.second{
+		border-top: 1px solid #4D4E50;
+		background-color: #333333;
+		max-height: 50px;
+		text-align: center;
+		opacity: 0.95;
+	}

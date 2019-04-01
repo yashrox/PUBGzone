@@ -1,0 +1,56 @@
+<% include layout/header %>
+
+<div class = "container">
+                <div class = "row">
+                        <div class = "col-xs-12">
+                            <form style = "text-align : center;" action = "/<%=data.btn%>" method  = "post">
+                                  
+                            <div class = "form-group">
+                                <label> NAME 
+                            
+                                    <input type = "text" name = "play1[name]" class = "form-control">
+                                </label>    
+                            </div>
+                            
+                            <div class = "form-group">
+                                <label> EMAIL 
+                                <br>
+                                    <input type = "text" name = "play1[email]" class = "form-control">
+                                </label>    
+                            </div>
+
+                            <div class = "form-group">
+                                <label> CITY 
+                                <br>
+                                    <input type = "text" name = "play1[city]" class = "form-control">
+                                </label>    
+                            </div>
+
+                            <div class = "form-group">
+                                <label> AGE 
+                                <br>
+                                    <input type = "number" name = "play1[age]" class = "form-control">
+                                </label>    
+                            </div>
+
+                            <div class = "form-group">
+                                <label> GAME ZONE
+        <input type = "text" name = "play1[gamezone]" class = "form-control" value = "<%=data.btn%>">
+                                </label>
+                </div>
+            
+
+
+
+                            <div class = "form-group">
+                            <button type = "submit" class = "btn btn-primary">SUBMIT</button>    
+                            </div>
+
+                    
+                    
+                    </form>
+                    </div>
+    </div>
+
+
+<% include layout/footer %>

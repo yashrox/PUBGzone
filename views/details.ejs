@@ -1,0 +1,36 @@
+<% include layout/header %>
+
+        <div class = "container">
+                
+            <div class = "row">
+            
+                <div class = "col-xs-12">
+                              
+               <%             if(data){     %>  
+                <h1>YOUR ORDERS</h1>
+                              <div class="panel panel-success">
+      <div class="panel-heading"><strong><%= data.cart.gamezone.toUpperCase()  %></strong></div>
+      <div class="panel-body"><h6><strong>TOKKENID</strong> : <%= data.tokken %></h6>
+            <h6><strong>DATE</strong> : <%= data.date %></h6>
+            <h6><strong>TOTAL PRICE</strong> : $<%= data.price %> </h6>
+            <h5><strong>CARD ID</strong> : <mark><%= data.cardID %><mark> </h5>
+      </div>
+      <div class="panel-footer">FOR QUERY - <a href = "/nodemailer" class = "btn btn-warning">MAIL</a>
+        
+      </div>
+    </div>    
+<%    }else{  %>
+    
+            <h1 style = "color : blue">NO ORDERS</h1>
+    
+<%    }   %>                                        
+                        </div>
+                        
+                
+            
+            
+            </div>        
+            </div>
+
+
+<% include layout/footer %>

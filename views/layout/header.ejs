@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        </head>
+    <body>
+    
+    <div class = "container">            
+    <nav class = "navbar navbar-inverse" role = "navigation">
+   
+   <div class = "navbar-header">
+      <button type = "button" class = "navbar-toggle" 
+         data-toggle = "collapse" data-target = "#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+      </button>
+		
+      <a class = "navbar-brand" href = "#">PUBG ZONE</a>
+   </div>
+   
+   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+       
+	
+      <ul class = "nav navbar-nav">
+         <li class = "active"><a href = "/">HOME</a></li>
+         <li><a href = "#">DISCLAIMER</a></li>
+          <li><a href = "#">PRIVACY POLICY</a></li>
+          <li><a href = "#">HELP</a></li>
+			
+         <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               TOURNAMENTS 
+               <b class = "caret"></b>
+            </a>
+            
+            <ul class = "dropdown-menu">
+               <li><a href = "#">GAME 1</a></li>
+               <li><a href = "#">GAME 2</a></li>
+               <li><a href = "#">GAME 3</a></li>
+                <li><a href = "#">GAME 4</a></li>
+                <li><a href = "#">GAME 5</a></li>
+                <li><a href = "#">GAME 6</a></li>
+               
+               <li class = "divider"></li>
+               <li><a href = "#HTP">HOW TO PLAY</a></li>
+               
+               <li class = "divider"></li>
+               <li><a href = "#">RETURN & REFUND POLICY</a></li>
+            </ul>
+            
+         </li>
+			
+      </ul>
+    </div>
+
+</nav>
+
+</div>                
+                
+                
+      <%  if(error && error.length>0){ %>
+                <div class="container">
+            <div class = "alert alert-danger"><%= error %> </div>
+                </div>
+            <%    } %>
+
+              <%  if(success && success.length>0){ %>
+                    <div class="container">
+                        <div class = "alert alert-success"> <%= success %> </div>
+                    </div>
+                <%    } %>   
+    
+                
+                

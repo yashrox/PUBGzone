@@ -1,0 +1,31 @@
+<% include layout/header %>
+
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-xs-12">
+                        <h1 style =  "text-align : center ; color : grey;">PAYMENT</h1>
+                            <h3 style = "font-family : italics ;">YOUR REGISTRACTION IS SUCCESSFULL </h3>
+                            
+                            
+                                <div class = "jumbotron">
+                                    <h3>PAY THE FEE FOR REGISTRACTION       <strong> $<%= data %></strong>  </h3>
+                                <form action="/checkout" method="POST">
+                            <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_YxpB1ZcWfYzpZuibO3HrlbuU"
+                            data-amount=data
+                            data-name="GAME ZONE"
+                            data-description= "REGISTRACTION FEE"
+                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                            data-locale="auto">
+                            </script>
+                            </form>            
+                                        
+                                </div>
+                                </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+<% include layout/footer %>
