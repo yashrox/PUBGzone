@@ -20,3 +20,9 @@ This chat example showcases how to use `socket.io` with a static `express` serve
     $ node server.js
 
 Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+
+
+<h1>##DESCRIPTION ABOUT THE PROJECT##</h1>
+
+
+here any one who want to earn money through pubg can register and a tokken will be assigned to him/her . Through which he/she can join the game(room) at specified time , for getting a tokken he/she has to pay a registraction fee

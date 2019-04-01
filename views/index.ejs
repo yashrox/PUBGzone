@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <style>
-        
+
                 .btn{
  text-align: center
-     
+
 
 }
 .back{
@@ -16,8 +16,8 @@
 			background-position : center center ;
 			background-repeat: no-repeat ;
 			height : 60vh ;
-			width: 100%;				
-	}	
+			width: 100%;
+	}
 
 
 
@@ -35,7 +35,7 @@
 .backh1{
     text-align: center;
         color:tomato;
-    font-weight: bold 
+    font-weight: bold
 }
 
 .flip-card-inner {
@@ -86,8 +86,8 @@
 
 /*-------services----------*/
 #services{
-	
-	
+
+
 }
 
 .backimage{
@@ -96,7 +96,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
     height: 13.6em;
-    
+
 }
 .services-container{
 	max-width: 90vw;
@@ -104,7 +104,7 @@
 	color: #e0e2db;
 }
 .service-item{
-	
+
     overflow: hidden;
 	position: relative;
 	padding: 4em;
@@ -175,51 +175,51 @@
 		opacity: 0.95;
 	}
 
-        
+
         </style>
-        
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        
+
     </head>
 <body>
-   
-    
+
+
 <!--Navigation bar--->
-    
+
 <div class="container">
-    
+
     <nav class = "navbar navbar-inverse" role = "navigation">
-   
+
    <div class = "navbar-header">
-      <button type = "button" class = "navbar-toggle" 
+      <button type = "button" class = "navbar-toggle"
          data-toggle = "collapse" data-target = "#example-navbar-collapse">
          <span class = "sr-only">Toggle navigation</span>
          <span class = "icon-bar"></span>
          <span class = "icon-bar"></span>
          <span class = "icon-bar"></span>
       </button>
-		
+
       <a class = "navbar-brand" href = "#">PUBG ZONE</a>
    </div>
-   
+
    <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
-       
-	
+
+
       <ul class = "nav navbar-nav">
          <li class = "active"><a href = "/">HOME</a></li>
          <li><a href = "#">DISCLAIMER</a></li>
           <li><a href = "#">PRIVACY POLICY</a></li>
           <li><a href = "#">HELP</a></li>
-			
+
          <li class = "dropdown">
             <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               TOURNAMENTS 
+               TOURNAMENTS
                <b class = "caret"></b>
             </a>
-            
+
             <ul class = "dropdown-menu">
                <li><a href = "#">GAME 1</a></li>
                <li><a href = "#">GAME 2</a></li>
@@ -227,31 +227,31 @@
                 <li><a href = "#">GAME 4</a></li>
                 <li><a href = "#">GAME 5</a></li>
                 <li><a href = "#">GAME 6</a></li>
-               
+
                <li class = "divider"></li>
                <li><a href = "#HTP">HOW TO PLAY</a></li>
-               
+
                <li class = "divider"></li>
                <li><a href = "#">RETURN & REFUND POLICY</a></li>
             </ul>
-            
+
          </li>
          <%    if(currentUser && user){  %>
          <li><a style = "color : blue ; font-family : italics ;">HELLO <%= user.toUpperCase() %></a></li>
         <%    }   %>
-         
-    <%    if(currentUser){  %> 
-        
+
+    <%    if(currentUser){  %>
+
 		<li> <a href = "/details" > MY ORDERS <i class = "fa fa-shopping-bag"></i> </a></li>
 		<li class = "active pull-right"> <a href = "/logout" > LOGOUT <i class = "fa fa-sign-out"></i> </a></li>
-	
+
     <%    }   %>
       </ul>
     </div>
 
 </nav>
 
-   
+
    <%  if(error && error.length>0){ %>
                 <div class="container">
             <div class = "alert alert-danger"><%= error %> </div>
@@ -262,115 +262,115 @@
                     <div class="container">
                         <div class = "alert alert-success"> <%= success %> </div>
                     </div>
-                <%    } %>  
-        
-    
+                <%    } %>
+
+
 <!--TITLE Image and Buttons --->
     <div class = "row">
         <div class  = "col-xs-12">
             <div class = "back">
-                
-                
+
+
                 <!---Title---starts--->
-                
+
 				<div class = "row">
-				    <div class = "col-xs-12">	
-				        <h1 class  = "backh1 ">PLAY AND WIN REAL CASH</h1>		
+				    <div class = "col-xs-12">
+				        <h1 class  = "backh1 ">PLAY AND WIN REAL CASH</h1>
 				    </div>
 				</div>
-                
+
                 <!---Title ends---->
-                
-                
+
+
         <!--banner buttons start--->
-                
+
                 <div class = "row" style="margin-top: 8em ; margin-left: 30%">
-                     
+
                 <%     if(!currentUser){  %>
-                     
+
                      <div class = "col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                        <a class = "btn btn-danger btn-lg b3" style="margin-bottom: 0.5em;" href = "/signup">SIGNUP 
-                        <i class="fa fa-user-plus" ></i></a>			
+                        <a class = "btn btn-danger btn-lg b3" style="margin-bottom: 0.5em;" href = "/signup">SIGNUP
+                        <i class="fa fa-user-plus" ></i></a>
                     </div>
 
                     <div class = "col-lg-2 col-md-3 col-sm-3 col-xs-12">
                         <a class = "btn btn-warning btn-lg b2" style="margin-bottom: 0.5em;" href = "/login">
-                            LOGIN <i class="fa fa-sign-in" ></i></a>			
+                            LOGIN <i class="fa fa-sign-in" ></i></a>
                     </div>
-                    
-                
-                    
+
+
+
                     <div class = "col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                        <a class = "btn btn-primary btn-lg" style="margin-bottom: 0.5em;" href = "/auth/facebook"> <i class="fa fa-facebook-f"></i>acebook</a>			
+                        <a class = "btn btn-primary btn-lg" style="margin-bottom: 0.5em;" href = "/auth/facebook"> <i class="fa fa-facebook-f"></i>acebook</a>
                     </div>
-                    
+
                         <%    }  %>
-                        
-                </div>	
-                
+
+                </div>
+
         <!---Banner buttons end--->
 			</div>
         </div>
     </div>
 
-        
+
     <hr>
-    
-    
+
+
     <h1>
     <marquee behavior="alternate" style="font-family: 'Merriweather',serif ">
         JOIN THE CONTEST, HURRY UP!</marquee>
     </h1>
-    
+
     <hr>
-    
-    
+
+
 <!--- Game Zone Start---->
-    
+
     <div id="Game_Zone">
     <div class = "row">
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 space">
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg" 
+                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg"
                         alt="Avatar" style="width:12.5em;height:12em;">
                         <h4 style = "font-family : cursive ; font-weight: bold">GAME ZONE 1</h4>
-                        
+
                     </div>
-                    
-      
+
+
                     <div class="flip-card-back">
-                        <h1>GAME 1</h1> 
-                        <p>Time: 9:30-10:30 AM</p> 
+                        <h1>GAME 1</h1>
+                        <p>Time: 9:30-10:30 AM</p>
                         <p>40INR per kill</p>
                     </div>
                 </div>
             </div>
-    <a href = "/registration" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
-            <p> <%= play1 %>/10 </p>
+    <a href = "/registration/1" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
+            <h4 style = "margin-left : 2em; "> <strong><%= play1 %></strong>/10 </h4>
         </div>
-        
+
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 space">
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg" 
+                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg"
                         alt="Avatar" style="width:12.5em;height:12em;">
                         <h4 style = "font-family : cursive ; font-weight: bold">GAME ZONE 2</h4>
-      
+
                     </div>
                 <div class="flip-card-back">
-                    <h1>GAME 2</h1> 
-                    <p>Time: 11:00-12:00 AM</p> 
+                    <h1>GAME 2</h1>
+                    <p>Time: 11:00-12:00 AM</p>
                     <p>40INR per kill</p>
                 </div>
                 </div>
             </div>
-    <a href = "/registration" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
-            <p> <%= play2 %>/10 </p>
+    <a href = "/registration/2" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
+          <h4 style = "margin-left : 2em; "> <strong><%= play2 %></strong>/10 </h4>
         </div>
-        
+
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 space">
             <div class="flip-card">
                 <div class="flip-card-inner">
@@ -380,116 +380,116 @@
                         <h4 style = "font-family : cursive ; font-weight: bold">GAME ZONE 3</h4>
                     </div>
                     <div class="flip-card-back">
-                        <h1>GAME 3</h1> 
-                        <p>Time: 9:30-10:30 AM</p> 
+                        <h1>GAME 3</h1>
+                        <p>Time: 9:30-10:30 AM</p>
                         <p>40INR per kill</p>
                     </div>
                 </div>
             </div>
-        <a href = "/registration" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
-            <p> <%= play3 %>/10 </p>
+        <a href = "/registration/3" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
+            <h4 style = "margin-left : 2em; "> <strong><%= play3 %></strong>/10 </h4>
         </div>
-        
+
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 space">
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg" 
+                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg"
                         alt="Avatar" style="width:12.5em;height:12em;">
                         <h4 style = "font-family : cursive ; font-weight: bold">GAME ZONE 4</h4>
                     </div>
                     <div class="flip-card-back">
-                        <h1>GAME 4</h1> 
-                        <p>Time: 9:30-10:30 AM</p> 
+                        <h1>GAME 4</h1>
+                        <p>Time: 9:30-10:30 AM</p>
                         <p>40INR per kill</p>
                     </div>
                 </div>
             </div>
-        <a href = "/registration" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
-            <p> <%= play4 %>/10 </p>
+        <a href = "/registration/4" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
+            <h4 style = "margin-left : 2em; "> <strong><%= play4 %></strong>/10 </h4>
         </div>
-        
+
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 space">
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                            <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg" 
+                            <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg"
                             alt="Avatar" style="width:12.5em;height:12em;">
                             <h4 style = "font-family : cursive ; font-weight: bold">GAME ZONE 5</h4>
                     </div>
                     <div class="flip-card-back">
-                        <h1>GAME 5</h1> 
-                        <p>Time: 9:30-10:30 AM</p> 
+                        <h1>GAME 5</h1>
+                        <p>Time: 9:30-10:30 AM</p>
                         <p>40INR per kill</p>
                     </div>
                 </div>
             </div>
-            <a href = "/registration" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
-            <p> <%= play5 %>/10 </p>
+            <a href = "/registration/5" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
+            <h4 style = "margin-left : 2em; "> <strong><%= play5 %></strong>/10 </h4>
         </div>
-        
+
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 space">
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg" 
+                        <img src="https://hdqwalls.com/download/pubg-helmet-guy-4k-j1-1366x768.jpg"
                         alt="Avatar" style="width:12.5em;height:12em;">
                         <h4 style = "font-family : cursive ; font-weight: bold">GAME ZONE 6</h4>
                     </div>
                     <div class="flip-card-back">
-                        <h1>GAME 6</h1> 
-                        <p>Time: 9:30-10:30 AM</p> 
+                        <h1>GAME 6</h1>
+                        <p>Time: 9:30-10:30 AM</p>
                         <p>40INR per kill</p>
                     </div>
                 </div>
             </div>
-        </div>   
-        <a href = "/registration" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
-            <p> <%= play6 %>/10 </p>
-    </div> 
-        
+            <a href = "/registration/6" class = "btn btn-primary" style = "margin-left : 2em; ">REGISTER </a>
+                <h4 style = "margin-left : 2em; "> <strong><%= play6 %></strong>/10 </h4>
+        </div>
+
     </div>
-    
-    
- 
-    
+      </div>
+
+
+
+
 <!---Game Zone End---->
-    
+
     <hr style=" border-color: red"></hr>
-    
-    
-    
+
+
+
     <!--Video---->
-    
+
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div id="HTP">
             <video controls style="height:18em;margin-top:2em; margin-bottom: 2em;;">
-                <source src="../client/img/pubg.mp4" type="video/mp4">
+                <source src="E:\pubgzone\pubg" type="video/mp4">
             </video>
             </div>
         </div>
-        
+
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h1 style="text-align: center;font-family: Courier;font-weight: bold;font-size: 3.5em;">WHY PUBG ZONE?</h1>
             <p style="font-family: verdana;font-size: 1.5em;">This is not only a game portal but a community for meeting great gamers near you. Play and win real cash through your gaming skills. <br>
             <br>
             PUBG ZONE aims at portraying the skills of the players. A one stop-shop for all the noobs and pros out there.</p>
         </div>
-    
-        
+
+
     </div>
-    
+
     <hr>
     <center>
     <div class="btn btn-success" ><a href="#Game_Zone" style="color:white;font-size: 2em;font-family: Merriweather;">TOURNAMENTS  <i class="fa fa-gamepad"></i></a></div>
     </center>
     <hr>
-    
-    
-    
 
-    
+
+
+
+
 <!----Footer---->
     <div class="row" style="background-color: lightgray">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
@@ -502,8 +502,8 @@
             <a href="#" class="btn btn-default">Return & Refund Policy</a>
             <a href="#" class="btn btn-default">Terms & Conditions</a><br>
         <hr>
-            <a href="#" class="btn btn-success" style="background-color: black">Download for Android <i class='fa fa-android' style="font-size: 2em;"></i></a>
-            <a href="#" class="btn btn-success" style="background-color: black" >Download for IOS <i class="fa fa-apple" style="font-size: 2em"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.tencent.ig&hl=en_IN" class="btn btn-success" target = "_blank"  style="background-color: black">Download for Android <i class='fa fa-android' style="font-size: 2em;"></i></a>
+            <a href="https://itunes.apple.com/us/app/pubg-mobile/id1330123889?mt=8" class="btn btn-success" target = "_blank"  style="background-color: black" >Download for IOS <i class="fa fa-apple" style="font-size: 2em"></i></a>
         <hr>
     </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
@@ -513,7 +513,7 @@
 		<div class="title-text">
 			<h1>About Us</h1>
 		</div>
-		
+
 	</div>
 	<!--end of title-->
 	<div class="services-container">
@@ -522,18 +522,18 @@
             <div class="front-text">
 				<i class="fa fa-user-plus"></i>
             </div>
-			
+
 			<div class="back-text">
 				<h1>About Us</h1>
 				<p>This website gives all the players a platform to not only play but also earn real cash out of their gaming skills. </p>
-				
+
 			</div>
-		</article>       
+		</article>
         </div>
         </div>
           </section>
         </div>
-   
+
      <div class="col=lg-4 col-md-4 col-sm-4 col-xs-12">
          <center><h1>CONTACT US</h1></center>
          <center>
@@ -543,14 +543,14 @@
         <a href="#" class="fa fa-youtube" style="font-size: 3em;"></a>
          </center>
     </div>
-    
+
     </div>
-    
-   
-   
+
+
+
     </div>
-    
-   
-    
+
+
+
 </body>
 </html>

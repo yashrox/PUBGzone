@@ -26,29 +26,29 @@ passport.deserializeUser((id  , done) => {
 passport.use('local-signup' , new LocalStrategy({
             usernameField : 'username' ,
             passwordField : 'password' ,
-            passReqToCallback : true 
+            passReqToCallback : true
 } , (req , username , password , done) => {
-    
+
         req.checkBody('username' , "Invalid Email").notEmpty().isEmail() ;
         req.checkBody('password'  , "Invalid Password").notEmpty().isLength({min:4});
-        
+
         var error = req.validationErrors();
-        
+
         if(error){
                 var message  = [] ;
                 error.forEach( (value) => {
-                        message.push(value.message);   
+                        message.push(value.message);
                 } )
-            return done(null , false , req.flash("error" , message) ) ;    
+            return done(null , false , req.flash("error" , message) ) ;
         }
-    
-    
+
+
             User.findOne({'local.username' : username})
             .then( (data) => {
                     if(data){
                         return done(null , false , req.flash("error" , "USERNAME ALREADY EXITS") )
                     }
-                    
+
                     var newuser = new User() ;
                     newuser.local.username  = username ;
                     newuser.local.password = password;
@@ -57,49 +57,49 @@ passport.use('local-signup' , new LocalStrategy({
                         return done(err);
                         return done(null , newuser) ;
                     })
-                    
-                    
+
+
             } ).catch( (err) => console.log(err.message) )
-    
+
 } ) )
 
 
-   
+
     passport.use('local-signin' , new LocalStrategy( {
             usernameField : 'username' ,
             passwordField : 'password' ,
             passReqToCallback : true ,
     } , (req, username , password , done) => {
-        
+
         req.checkBody('username' , "Invalid Email").notEmpty().isEmail() ;
         req.checkBody('password'  , "Invalid Password").notEmpty();
-        
+
         var error = req.validationErrors();
-        
+
         if(error){
                 var message  = [] ;
                 error.forEach( (value) => {
-                        message.push(value.message);   
+                        message.push(value.message);
                 } )
-            return done(null , false , req.flash("error" , message) ) ;    
+            return done(null , false , req.flash("error" , message) ) ;
         }
-            
-            User.findOne({'local.username' : username})
-            .then( (datas) => {  
+
+            User.findOne({'local.username' : username}).exec()
+            .then( (datas) => {
                         if(!datas){
                             return done(null , false , req.flash("error" , "USER NOT EXITS")) ;
-                        } 
-                        
-                    if( password !== datas.local.password ) {
-                        
-                        return done(null , false , req.flash("error" , "Password Invalid"))
-                    }    
-                    
+                        }
+                      console.log(password);
+                      if( password === 'datas.local.password' ){
+
+                        return done(null , false , req.flash('error' , "wrong passs"));
+          }
+
                     return done(null , datas)
             } )
-            .catch( (err) => console.log(err + "this is err") )
-        
-        
+            .catch( (err) => console.log(err.message + "this is err") )
+
+
     } ))
 
 
@@ -107,38 +107,38 @@ passport.use('local-signup' , new LocalStrategy({
 
 
     passport.use(new facebook({
-        
+
             clientID : config.clientID ,
             clientSecret : config.clientSecret,
             callbackURL  : config.callbackURL ,
             profile : ['emails' , 'name' , 'gender'] ,
-        
+
     } , function(accessToken, refreshToken, profile, done){
-        
-                    User.findOne({'facebook.id' : accessToken})
-                    .then((user) => {
-                            if(user){
-                                return done(null , user);
-                            }
-                        console.log("these are values "+ profile)
-                        var newuser = new User() ;
-                        newuser.facebook.tokken = accessToken ;
-                        newuser.facebook.name = profile.name.givenName + ' '+ profile.name.familyName ;
-                        newuser.facebook.id = profile.id ;
-                        newuser.facebook.email = profile.emails[0].value ;
-                        
-                        newuser.save()
-                        .then( (err) => {
-                                if(err){
-                                return err.message ;
-                                    
-                                }
-                            return done(null,newuser) ;
-                        } )
-                    })
+
+        User.findOne({'facebook.id' : profile.id})
+          .then( (user) => {
+                if(user){
+                    console.log("found")
+                    return done(null , user)
+                    }
+var newuser = new User();
+newuser.facebook.id = profile.id ;
+newuser.facebook.tokken = accessToken;
+newuser.facebook.name = profile.name.givenName+ ' ' +profile.name.familyName ;
+newuser.facebook.email = profile.emails[0].value ;
+console.log(profile);
+newuser.save((err) => {
+    if(err){
+      return err ;
+    }
+  return done(null , newuser)  ;
+})
+
+} )
+
                     .catch( err => console.log(err + " this is the err") )
-        
-    }  )  )
+
+      }  ))
 
 
 
@@ -174,7 +174,7 @@ router.post("/login" , passport.authenticate('local-signin' , {
 
             //*****router for facebook authentication****
 
-    
+
 router.get('/auth/facebook',
   passport.authenticate('facebook' , {scope : ['email'] }));
 
@@ -202,4 +202,3 @@ router.get('/logout' , (req,res) => {
 
 
 module.exports = router ;
-    

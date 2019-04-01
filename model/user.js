@@ -4,25 +4,25 @@ var usersch = new mongoose.Schema({
         local : {
                 username : {type : String , required : true },
                 password  : {type : String , required : true} ,
-           
+
         }  ,
-        
+
         facebook : {
-                id : Number ,
+                id : String ,
                 tokken : String,
                 name : String,
                 email : String,
         } ,
-        
-        order : [ 
+
+        order : [
                         { type : mongoose.Schema.Types.ObjectId ,
-                           ref  : "account" ,                                                        
-                                 
-                         }        
-                                
-                                
+                           ref  : "account" ,
+
+                         }
+
+
                 ]
-        
+
 })
 
 usersch.methods.generateHash = (password) => {
